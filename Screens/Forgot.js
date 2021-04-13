@@ -1,40 +1,29 @@
-import React from 'react';
-import {Text, Pressable} from 'react-native';
+import React from 'react'
+import { View, Text, Pressable } from 'react-native'
 import styled from 'styled-components';
 
-const Login = ({navigation}) => {
-  return (
-    <Screen>
+const Forgot = ({navigation}) => {
+    return (
+        <Screen>
       <ImagePoster
         resizeMode="contain"
         source={require('../assets/poster.png')}
       />
       <InputContainer>
         <Input placeholder="Email" />
-        <Input placeholder="Password" />
-        <Pressable onPress={()=>navigation.navigate("Forgot")}>
-          <Text
-            style={{
-              marginTop: -5,
-              fontSize: 12,
-              color: '#444',
-              fontFamily: 'Roboto-Medium',
-            }}>
-            Forget Password
-          </Text>
-        </Pressable>
       </InputContainer>
-      <LoginButton>
+      <ResetButton>
         <Text
           style={{color: 'white', fontSize: 17, fontFamily: 'Roboto-Medium'}}>
-          Login
+          Reset Password
         </Text>
-      </LoginButton>
+      </ResetButton>
     </Screen>
-  );
-};
+    )
+}
 
-export default Login;
+export default Forgot
+
 
 const ImagePoster = styled.Image`
   width: 100%;
@@ -59,10 +48,10 @@ const InputContainer = styled.View`
   background: white;
   padding: 10px;
   marginTop: -20px;
-  marginBottom: 40px;
+  marginBottom: 10px;
 `;
 
-const LoginButton = styled.TouchableOpacity`
+const ResetButton = styled.TouchableOpacity`
   background: red;
   height: 40px;
   width: 100%;
