@@ -2,9 +2,9 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import styled from 'styled-components'
 
-const Coop = ({name, url}) => {
+const Coop = ({name, url, navigation}) => {
     return (
-        <CoopCont>
+        <CoopCont onPress={()=> navigation.navigate('BroilerRecord')}>
             <Title>{name}</Title>
             <CoopImage resizeMode='cover' source={url}/>
         </CoopCont>
@@ -13,10 +13,11 @@ const Coop = ({name, url}) => {
 
 export default Coop
 
-const CoopCont = styled.View`
+const CoopCont = styled.Pressable`
     background: whitesmoke;
     margin-bottom: 15px;
     align-items: center;
+
 `
 
 const Title = styled.Text`

@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import Icon2 from 'react-native-vector-icons/AntDesign'
 import AdBanner from '../Components/AdBanner';
 import Coop from '../Components/Coop';
-const Home = () => {
+const Home = ({navigation}) => {
     return (
         <Screen>
             <Header>
@@ -17,9 +17,9 @@ const Home = () => {
             </Header>
             <AdBanner />
             <Container showsVerticalScrollIndicator={false}>
-                <Coop name='Coop 1' url={require('../assets/coop1.png')} />
-                <Coop name='Coop 2' url={require('../assets/coop2.png')} />
-                <Coop name='Coop 3' url={require('../assets/coop2.png')} />
+                <Coop name='Coop 1' navigation={navigation} url={require('../assets/coop1.png')} />
+                <Coop name='Coop 2' navigation={navigation} url={require('../assets/coop2.png')} />
+                <Coop name='Coop 3' navigation={navigation} url={require('../assets/coop2.png')} />
             </Container>
         </Screen>
     )
