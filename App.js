@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import DrawerStack from './Stack/DrawerStack'
 
 //Screens
 import Login from './Screens/Login';
@@ -15,9 +16,9 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Register" component={Register} options={{headerShown:false}} />
+        <Stack.Screen name="Main" component={DrawerStack} options={{headerShown:false}} />
         <Stack.Screen name="Login" component={Login} options={{headerShown:false}} />
-        <Stack.Screen name="Home" component={Home} options={{headerShown:false}} />
+        <Stack.Screen name="Register" component={Register} options={{headerShown:false}} />
         <Stack.Screen name="Forgot" component={Forgot} options={{headerShown:false}} />
         <Stack.Screen name="BroilerRecord" component={BroilderRecord} options={{headerShown:false}} />
         <Stack.Screen name="UpdateUnits" component={UpdateUnits} options={{headerShown:false}} />
