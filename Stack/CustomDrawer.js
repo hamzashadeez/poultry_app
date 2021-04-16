@@ -26,7 +26,7 @@ const CustomDrawer = props => {
       <DrawerItem
         label="Broiler Record"
         labelStyle={{color: 'white',fontFamily: "Roboto-Medium",fontSize: 16}}
-        onPress={() => props.navigation.navigate("Home")}
+        onPress={() => props.navigation.navigate("BroilerRecord")}
       />
       <DrawerItem
         label="Feed Record"

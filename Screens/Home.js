@@ -11,7 +11,7 @@ const Home = ({navigation}) => {
             <Header>
                 <Icon2 name='caretleft' size={20} color='red' />
                 <Title>Home</Title>
-                <TouchableOpacity style={{backgroundColor: "red", height:26, width: 26, borderRadius: 13, alignItems: 'center', justifyContent: "center"}}>
+                <TouchableOpacity onPress={()=>navigation.openDrawer()} style={{backgroundColor: "red", height:26, width: 26, borderRadius: 13, alignItems: 'center', justifyContent: "center"}}>
                     <Icon name='md-menu-sharp' size={20} color='white' />
                 </TouchableOpacity>
             </Header>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, Pressable} from 'react-native';
+import {Text,View, Pressable, TouchableOpacity} from 'react-native';
 import styled from 'styled-components';
 
 const Login = ({navigation}) => {
@@ -30,6 +30,12 @@ const Login = ({navigation}) => {
           Login
         </Text>
       </LoginButton>
+      <View style={{marginTop: 15, flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 10}}>
+        <Text>New User ?</Text> 
+        <TouchableOpacity onPress={()=>navigation.navigate('Register')}>
+          <Text style={{fontFamily: "Roboto-Medium", color: 'red'}}>Create Account</Text>
+        </TouchableOpacity>
+      </View>
     </Screen>
   );
 };
