@@ -4,21 +4,21 @@ import styled from 'styled-components';
 
 const Forgot = ({navigation}) => {
     return (
-        <Screen>
-      <ImagePoster
-        resizeMode="contain"
-        source={require('../assets/poster.png')}
-      />
-      <InputContainer>
-        <Input placeholder="Email" />
-      </InputContainer>
-      <ResetButton>
-        <Text
-          style={{color: 'white', fontSize: 17, fontFamily: 'Roboto-Medium'}}>
-          Reset Password
-        </Text>
-      </ResetButton>
-    </Screen>
+          <Screen>
+            <ImagePoster
+              resizeMode="contain"
+              source={require('../assets/poster.png')}
+            />
+            <InputContainer>
+              <Input placeholder="Email" />
+            </InputContainer>
+            <ResetButton onPress={()=>alert("Success")}>
+              <Text
+                style={{color: 'white', fontSize: 17, fontFamily: 'Roboto-Medium'}}>
+                Reset Password
+              </Text>
+            </ResetButton>
+          </Screen>
     )
 }
 

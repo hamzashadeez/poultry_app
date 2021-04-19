@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {
   DrawerContentScrollView,
@@ -8,14 +8,16 @@ import {
 import styled from 'styled-components'
 import Icon from 'react-native-vector-icons/Ionicons';
 import Ico from 'react-native-vector-icons/MaterialCommunityIcons';
+import {UserContext} from '../UserContext'
 
 const CustomDrawer = props => {
+  const [user] = useContext(UserContext)
   return (
     <DrawerContentScrollView style={{backgroundColor: 'red'}}>
       {/* <DrawerItemList {...props} /> */}
       <Header>
         <Avatar />
-        <Text style={{fontFamily: "Roboto-Medium", fontSize: 20,color: 'white' }}>John Doe</Text>
+        <Text style={{fontFamily: "Roboto-Medium", marginLeft: 5, fontSize: 16,color: 'white' }}>{user.username}</Text>
       </Header>
       <Line />
       <DrawerItem
@@ -31,17 +33,17 @@ const CustomDrawer = props => {
       <DrawerItem
         label="Feed Record"
         labelStyle={{color: 'white',fontFamily: "Roboto-Medium",fontSize: 16}}
-        onPress={() => props.navigation.navigate("Home")}
+        onPress={() => props.navigation.navigate("FeedRecord")}
       />
       <DrawerItem
         label="Costing"
         labelStyle={{color: 'white',fontFamily: "Roboto-Medium",fontSize: 16}}
-        onPress={() => props.navigation.navigate("Home")}
+        onPress={() => props.navigation.navigate("Costing")}
       />
       <DrawerItem
         label="Sales"
         labelStyle={{color: 'white',fontFamily: "Roboto-Medium",fontSize: 16}}
-        onPress={() => props.navigation.navigate("Home")}
+        onPress={() => props.navigation.navigate("Sales")}
       />
       <DrawerItem
         label="Income Invoice"

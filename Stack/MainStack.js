@@ -15,8 +15,3 @@ function MainStack() {
 }
 
 export default MainStack
-{/* <Stack.Screen
-        name="Main"
-        component={DrawerStack}
-        options={{headerShown: false}}
-      /> */}

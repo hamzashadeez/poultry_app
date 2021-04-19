@@ -1,14 +1,17 @@
-import React from 'react'
+import React, {useState, useContext} from 'react';
 import { View, Text, Image } from 'react-native'
 import styled from 'styled-components';
+import {UserContext} from '../UserContext'
 
 const Register = ({navigation}) => {
+    const [email, setEmail] = useState("")
+    const [user, setUser] = useContext(UserContext);
     return (
         <Screen>
             <InputContainer>
                 <Input placeholder="Name" />
                 <Input placeholder="Surname" />
-                <Input placeholder="Email" />
+                <Input placeholder="Email" value={email} onChangeText={(e)=>setEmail(e)} />
                 <Input placeholder="Password" />
                 <Input placeholder="Confirm Password" />
             
@@ -20,7 +23,7 @@ const Register = ({navigation}) => {
                 </Upload>
             </AvatarContainer>
 
-            <LoginButton onPress={()=>navigation.navigate("Home")}>
+            <LoginButton onPress={()=>setUser({username: email})}>
                 <Text
                 style={{color: 'white', fontSize: 17, fontFamily: 'Roboto-Medium'}}>
                 CREATE ACCOUNT
@@ -53,7 +56,7 @@ const Screen = styled.View`
 `;
 const Input = styled.TextInput`
   padding: 10px;
-  paddingBottom: 5px
+  paddingBottom: 5px;
   background: white;
   borderBottomWidth: 2px;
   borderBottomColor: #555;

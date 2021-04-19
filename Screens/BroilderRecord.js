@@ -2,7 +2,6 @@ import React from 'react'
 import { View, Text, TouchableOpacity, Pressable } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import Icon2 from 'react-native-vector-icons/AntDesign'
-
 import styled from 'styled-components'
 import Box from '../Components/Box'
 
@@ -14,7 +13,9 @@ const BroilderRecord = ({navigation}) => {
                     <Icon2 name='caretleft' size={20} color='red' />
                 </TouchableOpacity>
                 <Title>Broiler Record</Title>
-                <TouchableOpacity style={{backgroundColor: "red", height:26, width: 26, borderRadius: 13, alignItems: 'center', justifyContent: "center"}}>
+                <TouchableOpacity 
+                    onPress={()=>navigation.openDrawer()}
+                style={{backgroundColor: "red", height:26, width: 26, borderRadius: 13, alignItems: 'center', justifyContent: "center"}}>
                     <Icon name='md-menu-sharp' size={20} color='white' />
                 </TouchableOpacity>
             </Header>
@@ -46,7 +47,7 @@ const BroilderRecord = ({navigation}) => {
                     <Box number='4' title='Bags' />
                 </Container>
 
-                <TouchableOpacity onPress={()=>navigation.navigate('UpdateUnits')} style={{backgroundColor: 'red', marginTop: 40, padding: 10, borderRadius: 10}}>
+                <TouchableOpacity onPress={()=>navigation.navigate('Home')} style={{backgroundColor: 'red', marginTop: 40, padding: 10, borderRadius: 10}}>
                     <Text style={{textAlign: "center", color: "white", fontFamily:"Roboto-Bold"}}>Update Units</Text>
                 </TouchableOpacity>
             </BodyCont>

@@ -1,8 +1,63 @@
-import React from 'react';
+import React, {useState, useContext} from 'react';
 import {Text,View, Pressable, TouchableOpacity} from 'react-native';
 import styled from 'styled-components';
+import {UserContext} from '../UserContext'
+import {login} from '../API'
+import axios from 'react-native-axios'
 
 const Login = ({navigation}) => {
+  const [user, setUser] = useContext(UserContext);
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+
+  const submit = async()=>{
+    // const path = "https://demo.exultcybersolution.com/poultryfarm/api"
+    // let data = {
+    //   username,
+    //   password,
+    //   device: 1,
+    //   fcm_key: 'oiweio'
+    // }
+    // axios.post(path, {
+    //   method: 'POST', // or 'PUT'
+    //   headers: {
+    //     Accept: 'application/json',
+    //     'Content-Type': 'application/json',
+    //     'Content-Language': 'en'
+    //   },
+    //     body: JSON.stringify({
+    //       username: "hahmad1178@gmail.com",
+    //       password: 1234444,
+    //       device: 1,
+    //       fcm_key: 'oiweio'
+    //     })
+    // })
+    // .then(function (response) {
+    //   console.log(response.data);
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
+    // await fetch(path, {
+    //   method: 'POST', // or 'PUT'
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'Accept-Language': 'en'
+    //     // 'Authorization': 'Bearer  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvZGVtby5leHVsdGN5YmVyc29sdXRpb24uY29tXC9wb3VsdHJ5ZmFybSIsInNlY3JhdGUiOiJRSjV6Ym9OQTJkS2ptZTE5WG5wdk0iLCJhdWQiOiJodHRwczpcL1wvZGVtby5leHVsdGN5YmVyc29sdXRpb24uY29tXC9wb3VsdHJ5ZmFybSIsImlhdCI6MTYxODU4MzMwNn0.zOziHaDYAVLYjQ-hMOhC9ribbwSstjQQatObagPO7_k', 
+    //   },
+    //   body: JSON.stringify(data)
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //   console.log('Success:', data);
+    //   alert(data.message)
+    // })
+    // .catch((error) => {
+    //   alert("Something went wrong")
+    //   console.error('Error:', error);
+    // });
+    setUser({username: username})
+  }
   return (
     <Screen>
       <ImagePoster
@@ -10,8 +65,8 @@ const Login = ({navigation}) => {
         source={require('../assets/poster.png')}
       />
       <InputContainer>
-        <Input placeholder="Email" />
-        <Input placeholder="Password" />
+        <Input value={username} onChangeText={(e)=>setUsername(e)} placeholder="Username" />
+        <Input value={password} onChangeText={(e)=>setPassword(e)} placeholder="Password" />
         <Pressable onPress={()=>navigation.navigate("Forgot")}>
           <Text
             style={{
@@ -24,7 +79,7 @@ const Login = ({navigation}) => {
           </Text>
         </Pressable>
       </InputContainer>
-      <LoginButton>
+      <LoginButton onPress={()=>submit()}>
         <Text
           style={{color: 'white', fontSize: 17, fontFamily: 'Roboto-Medium'}}>
           Login

@@ -6,14 +6,14 @@ import styled from 'styled-components'
 import Unit from '../Components/Unit'
 
 
-const UpdateUnits = ({navigation}) => {
+const NewSales = ({navigation}) => {
     return (
         <View>
            <Header>
                 <TouchableOpacity onPress={()=>navigation.navigate('Home')}>
                     <Icon2 name='caretleft' size={20} color='red' />
                 </TouchableOpacity>
-                <Title>Broiler Record</Title>
+                <Title>New Sales</Title>
                 <TouchableOpacity onPress={()=>navigation.openDrawer()} style={{backgroundColor: "red", height:26, width: 26, borderRadius: 13, alignItems: 'center', justifyContent: "center"}}>
                     <Icon name='md-menu-sharp' size={20} color='white' />
                 </TouchableOpacity>
@@ -32,25 +32,26 @@ const UpdateUnits = ({navigation}) => {
                 </View>
             </Menu>
             <BodyCont>
-                <Text style={{fontSize: 18, fontFamily: "Roboto-Medium"}}>Update Units</Text>
+                <Text style={{fontSize: 18, fontFamily: "Roboto-Medium"}}>New Sales</Text>
                 <Container showsVerticalScrollIndicator={false}>
-                    <Unit title='Mortality' />
-                    <Unit title='Culls' />
-                    <Unit title='Sold' />
+                    <Unit title='Live Stock' />
+                    <Unit title='Manure' />
                     <Unit title='Slaughtered' />
-                    <Unit title='Live stock' />
-                    <Unit title='Stoled' />
                 </Container>
+                <View style={{flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingHorizontal: 10, marginTop: 20}}>
+                    <Text style={{fontFamily: "Roboto-Bold", fontSize: 18}}>Total</Text>
+                    <Text style={{fontFamily: "Roboto-Bold", fontSize: 18}}>R9520</Text>
+                </View>
                 {/* button */}
                 <TouchableOpacity onPress={()=>navigation.navigate('Home')} style={{backgroundColor: 'red', marginTop: 40, padding: 10, borderRadius: 10}}>
-                    <Text style={{textAlign: "center", color: "white", fontFamily:"Roboto-Bold"}}>Update</Text>
+                    <Text style={{textAlign: "center", color: "white", fontFamily:"Roboto-Bold"}}>Sold</Text>
                 </TouchableOpacity>
             </BodyCont>
         </View>
     )
 }
 
-export default UpdateUnits
+export default NewSales
 
 const Header = styled.View`
     padding: 10px;
