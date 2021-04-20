@@ -48,7 +48,7 @@ const CustomDrawer = props => {
       <DrawerItem
         label="Income Invoice"
         labelStyle={{color: 'white',fontFamily: "Roboto-Medium",fontSize: 16}}
-        onPress={() => props.navigation.navigate("Home")}
+        onPress={() => props.navigation.navigate("Invoice")}
       />
       <DrawerItem
         label="Feed Calculator"

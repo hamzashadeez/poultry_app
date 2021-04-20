@@ -8,6 +8,7 @@ import FeedRecord from '../Screens/FeedRecord';
 import Costing from '../Screens/Costing';
 import Sales from '../Screens/Sales'
 import NewSales from '../Screens/NewSales';
+import Invoice from '../Screens/Invoice';
 const Drawer = createDrawerNavigator();
 
 const DrawerStack = props => {
@@ -19,6 +20,7 @@ const DrawerStack = props => {
       <Drawer.Screen name="Costing" component={Costing} />
       <Drawer.Screen name="Sales" component={Sales} />
       <Drawer.Screen name="NewSales" component={NewSales} />
+      <Drawer.Screen name="Invoice" component={Invoice} />
     </Drawer.Navigator>
   );
 };
